@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>
+        用户名
+        <input type="text" id="username"/>
+    </label>
+    <label>
+        密码
+        <input type="password" id="password"/>
+    </label>
+    <button onclick="submit()">提交</button>
+    <script>
+        function submit() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            fetch('/api/login', {
+                method: 'post',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            }).then(resq => {
+                console.log(resq)
+                return resq.json();
+            }).then(res => {
+                const redirect = res.data.redirectUrl;
+                location.href = redirect;
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+    </script>
+
+</body>
+</html>

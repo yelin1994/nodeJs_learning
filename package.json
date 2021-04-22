@@ -4,12 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon express/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glob": "^7.1.6"
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.6",
+    "http-proxy-middleware": "^1.0.5",
+    "koa": "^2.13.0",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^8.0.8",
+    "loadsh": "0.0.4",
+    "nodemon": "^2.0.3",
+    "protocol-buffers": "^4.2.0",
+    "react-bootstrap": "^1.4.0",
+    "sequelize": "^5.21.7",
+    "webpack-dev-middleware": "^3.7.2",
+    "yargs": "^16.0.3"
+  },
+  "devDependencies": {
+    "cowsay": "^1.4.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }

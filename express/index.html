@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const body = document.body;
+        fetch('/api/data',{
+            method: 'post',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: 'success'
+            })
+        }).then(res => res.json()) 
+        .then(result => {
+           body.innerHTML= result.data
+        })
+
+    </script>
+   
+</body>
+</html>
